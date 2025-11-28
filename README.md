@@ -14,9 +14,9 @@ hdrcr hero
 There is a file as a result:
 ``` cpp
 /* hero.h */
-# ifndef HERO_H
-# define HERO_H
+#ifndef HERO_H
+#define HERO_H
 
-# endif
+#endif
 ```
 
