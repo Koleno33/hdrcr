@@ -2,7 +2,7 @@
 Simple utility to help with creating header files for C/C++.
 
 # Features
-- **1 solution for 1 problem**. All the utility does is create a header file with header guard for it.
+- **Easy to use**. Helps easily plan project header files through the CLI. 
 - **Extracting name**. The utility names the header guard based on the specified file name. 
 
 # Usage
