@@ -49,6 +49,8 @@ namespace hdrcr
   }
 
   CreationResult HeaderCreator::create_header() {
+    if (!_out || _filename.empty()) return CreationResult::FAILURE;
+
     if (header_exists()) {
       return CreationResult::HEADER_EXISTS;
     }
@@ -64,6 +66,17 @@ namespace hdrcr
     _out << "#endif";
 
     return CreationResult::SUCCESS;
+  }
+
+  void HeaderCreator::change_file(std::string_view filename, std::string_view header) {
+    _filename = filename;
+    _header   = header;
+
+    _out.close();
+    _out = std::ofstream { _filename, std::ios::app };
+    if (!_out) {
+      throw FileOpenException();
+    }
   }
 }
 

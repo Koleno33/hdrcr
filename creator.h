@@ -18,15 +18,17 @@ namespace hdrcr
   class HeaderCreator {
   private:
     std::string _filename { };
-    std::string _header;
+    std::string _header { };
     std::ofstream _out;
 
     bool header_exists();
 
   public:
     HeaderCreator(std::string_view filename, std::string_view header="");
+    HeaderCreator() = default;
     ~HeaderCreator();
     CreationResult create_header();
+    void change_file(std::string_view filename, std::string_view header="");
   };
 }
 

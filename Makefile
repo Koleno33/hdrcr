@@ -1,5 +1,5 @@
 TARGET = hdrcr
-SRCS = main.cpp creator.cpp errors.cpp
+SRCS = main.cpp creator.cpp errors.cpp arguments.cpp
 CXX = g++
 CXXFLAGS = -c -Wall
 
