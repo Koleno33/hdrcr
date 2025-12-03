@@ -6,6 +6,12 @@ namespace hdrcr
   std::string get_header_str(std::string_view filename) {
     std::string result { filename };
 
+    /* delete path to file from header */
+    std::size_t namepos { filename.rfind('/') };
+    if (namepos != std::string::npos) {
+      result = result.substr(namepos + 1);
+    }
+
     /* replace spaces and dots with _ and make uppercase */
     for (size_t i = 0; i < result.length(); ++i) {
       if (result[i] == ' ' || result[i] == '.') {
